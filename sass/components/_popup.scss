@@ -9,8 +9,16 @@
   opacity: 0;
   visibility: hidden;
    transition:all .3s;
-
   
+   //doesnt work in chrome but woeks in safari
+  
+
+  @supports ( -webkit-backdrop-filter: blur(10px)) or(backdrop-filter: blur(10px)){
+
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+
+  }
 
   
 
@@ -72,6 +80,8 @@
   }
 
   &:target &__content{
+    opacity: 1;
+    transform: translate(-50%,-50%) scale(1);
 
   }
 
